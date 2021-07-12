@@ -54,13 +54,14 @@ if(isset($_GET['tuj'])){
       else{header("location:../app_crud/index.php?notif=Tidak berhasil Edit User ".$naDe." !");}
     }
   }elseif($_GET['tuj']=="actDelete"){//Action Delete ..........................................
-      $idDelete = $_GET["varDel"];
 		//echo "Ini Action Delete, Untuk Id ". $_GET["varDel"];
-			$queDelUser="DELETE FROM user_belajar WHERE  idUser= '$idDelete'";
-			$sudah_del = mysqli_query($connect,$queDelUser) or die('Error Query!');
+      $idDelete = $_GET["varDel"];
+      $NameDelete = $_GET["varDelNama"];
+			$queDeletUser="DELETE FROM user_belajar WHERE idUser='$idDelete'";
+			$sudah_del = mysqli_query($connect,$queDeletUser) or die('Error Query!');
 			if($sudah_del){
-				echo header("location:../app_crud/index.php?notif=Sudah hapus data id ".$idDelete);
-			}else{header("location:../app_crud/index.php?notif=Data id ".$idDelete." gagal dihapus");}
+				header("location:../app_crud/index.php?notif=Sudah hapus user ".$NameDelete." !");
+			}else{header("location:../app_crud/index.php?notif=Tidak berhasil hapus user ".$NameDelete." !");}
 	}else{
 		echo "Tujuan tidak jelas";
 	}

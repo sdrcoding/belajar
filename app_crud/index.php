@@ -30,8 +30,8 @@
       <td><?= $dat["namaDepan"]." ".$dat["namaBelakang"];?></td>
       <td><?= $dat["tglIn"];?></td>
       <td>
-        <a href="../app_crud/action_view.php?tuj=halEdit&&varEd=<?= $dat["idUser"];?>">Edit</a> | 
-        <a href="../app_crud/action_view.php?tuj=actDelete&&varDel=<?= $dat["idUser"];?>">Delete</a>
+        <a href="../app_crud/action_view.php?tuj=halEdit&&varEd=<?= $dat["idUser"];?>&&varEdNama=<?= $dat["namaDepan"];?>">Edit</a> | 
+        <a href="../app_crud/action_view.php?tuj=actDelete&&varDel=<?= $dat["idUser"];?>&&varDelNama=<?= $dat["namaDepan"];?>">Delete</a>
       </td>
     </tr>
 <?php $no++; }?>
